@@ -15,7 +15,7 @@ toDoControl.addEventListener('submit', function(event) {
         completed: false // создание нового объекта, текст которого зависит от импута
     }
     toDoData.push(newToDo) // отправка созданного объекта в массив toDoData
-    headerInput.value = '' // отчистка поля после отправки в массив
+    headerInput.value = '' // очистка поля после отправки в массив
     } else {
         event.preventDefault()
         alert ('Введите задачу')
@@ -52,17 +52,13 @@ const render = function () {
             render()
         })
         store = localStorage.setItem('toDoData', JSON.stringify(toDoData))
-        console.log(toDoData);
     })
 }
 
 const getToDoData = function () {
      store = localStorage.getItem('toDoData')
      toDoData = JSON.parse(store)
-     console.log(toDoData)
      render()
 }
 
 getToDoData()
-
-console.log(localStorage)
