@@ -56,9 +56,11 @@ const render = function () {
 }
 
 const getToDoData = function () {
-     store = localStorage.getItem('toDoData')
-     toDoData = JSON.parse(store)
-     render()
+    store = localStorage.getItem('toDoData')
+    if (store) {
+        toDoData = JSON.parse(store)
+        render()
+    }
 }
 
 getToDoData()
